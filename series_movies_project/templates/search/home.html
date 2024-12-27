@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}WatchHub - Inicio{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h1>Bienvenido a WatchHub, el mejor buscador de Series y Películas online</h1>
+    <p>En WatchHub, te ofrecemos una experiencia única para encontrar tus series y películas favoritas al instante. Con nuestra interfaz intuitiva y potente motor de búsqueda, podrás explorar una amplia variedad de géneros, desde dramas y comedias hasta thrillers y documentales. Ya sea que busques lo último en estrenos o redescubras un clásico, WatchHub te tiene cubierto.
+
+    <h2>¿Cómo funciona?</h2>
+    <p>Basta con ingresar el título de una serie o película, y nuestra plataforma te mostrará las mejores opciones disponibles en diferentes servicios de streaming. Además, puedes filtrar y ordenar los resultados según tu preferencia, ¡haciendo que tu búsqueda sea aún más fácil!</p>
+        
+    <h2>Explora, encuentra y disfruta.</h2>
+    <p>Con WatchHub, nunca más perderás tiempo buscando qué ver. ¡Empieza a descubrir hoy mismo y transforma tu manera de disfrutar del entretenimiento online!</p>
+    <a href="{% url 'search_list' %}" class="btn btn-primary">Buscar contenido</a>
+</div>
+{% endblock %}

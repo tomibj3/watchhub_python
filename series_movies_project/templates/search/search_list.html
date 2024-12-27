@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}WatchHub - Lista de Series y Películas{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Lista de Series y Películas</h1>
+    <a href="/search/add/" class="btn btn-success mb-3">Agregar Nueva</a>
+    {% if series_movies %}
+        <div class="row">
+        {% for series_movie in series_movies %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{{ series_movie.image.url }}" class="card-img-top" alt="{{ series_movie.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ series_movie.title }}</h5>
+                        <p class="card-text">{{ series_movie.description|truncatechars:100 }}</p>
+                        <a href="/search/{{ series_movie.id }}/" class="btn btn-primary">Leer más</a>
+                        {% if user == series_movie.created_by %}
+                            <a href="/search/{{ series_movie.id }}/delete/" class="btn btn-danger">Eliminar</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center">No hay resultados aún.</p>
+    {% endif %}
+{% endblock %}

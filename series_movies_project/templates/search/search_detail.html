@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}WatchHub - Detalles de {{ series_movie.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ series_movie.image.url }}" class="img-fluid" alt="{{ series_movie.title }}">
+        </div>
+        <div class="col-md-6">
+            <h1>{{ series_movie.title }}</h1>
+            <p><strong>Género:</strong> {{ series_movie.genre }}</p>
+            <p><strong>Fecha de Lanzamiento:</strong> {{ series_movie.release_date }}</p>
+            <p><strong>Descripción:</strong> {{ series_movie.description }}</p>
+            <a href="/search/" class="btn btn-secondary">Volver</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
